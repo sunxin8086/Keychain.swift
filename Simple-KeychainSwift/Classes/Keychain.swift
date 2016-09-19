@@ -11,6 +11,7 @@ import Foundation
 // MARK: - *** Public methods ***
 open class Keychain {
     
+    @discardableResult
     open class func set(_ value:String, forKey key:String) -> Bool {
         if valueExists(forKey: key) {
             return update(value, forKey: key)
@@ -19,6 +20,7 @@ open class Keychain {
         }
     }
     
+    @discardableResult
     open class func set(_ bool:Bool, forKey key:String) -> Bool {
         let value = bool ? "true" : "false"
         return set(value, forKey: key)
